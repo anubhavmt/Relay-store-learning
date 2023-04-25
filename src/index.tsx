@@ -5,7 +5,6 @@ import Approot from "./Approot";
 import reportWebVitals from "./reportWebVitals";
 import environment from "./RelayEnvironment";
 import { RelayEnvironmentProvider } from "react-relay";
-import Approot2 from "./Approot2";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
