@@ -1,0 +1,58 @@
+# const { ApolloServer, gql } = require("apollo-server");
+
+# const books = [
+#   {
+#     id: 1,
+#     title: "The Awakening",
+#     author: {
+#       firstname: "Kate",
+#       secondname: "Chopin",
+#     },
+#   },
+#   {
+#      title: "City of Glass",
+#      author: {
+#        firstname: "Paul",
+#        secondname: "Auster",
+#      },
+#    },
+# ];
+
+# const typeDefs = gql`
+  interface Node {
+    id: ID!
+  }
+  type Book implements Node {
+    id: ID!
+    title: String!
+    author: Auth!
+  }
+
+  type Auth implements Node {
+    id: ID!
+    firstname: String!
+    secondname: String!
+  }
+
+  type Query {
+    books: [Book]!
+    authors: [Book!]!
+  }
+
+  input bookInput {
+    id: ID!
+    title: String!
+    author: authInput!
+  }
+  input authInput {
+    id: ID!
+    firstname: String!
+    secondname: String!
+  }
+  type Mutation {
+    addBook(book: bookInput!): Book
+    updateBook(bookId: ID!, book: bookInput!): Book
+    # updateBook(bookId: String!, title: String!): Book
+  }
+# `;
+
