@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<905018a830a778ffd0d99343e06a46ea>>
+ * @generated SignedSource<<90a407197f7b0623fbf6d869a8862b48>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -13,7 +13,6 @@ import { FragmentRefs } from "relay-runtime";
 export type ApprootQuery$variables = {};
 export type ApprootQuery$data = {
   readonly books: ReadonlyArray<{
-    readonly id: string;
     readonly " $fragmentSpreads": FragmentRefs<"App_detail">;
   } | null>;
 };
@@ -45,7 +44,6 @@ return {
         "name": "books",
         "plural": true,
         "selections": [
-          (v0/*: any*/),
           {
             "args": null,
             "kind": "FragmentSpread",
@@ -72,30 +70,56 @@ return {
         "name": "books",
         "plural": true,
         "selections": [
-          (v0/*: any*/),
           {
             "alias": null,
             "args": null,
             "kind": "ScalarField",
             "name": "title",
             "storageKey": null
-          }
+          },
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "Auth",
+            "kind": "LinkedField",
+            "name": "author",
+            "plural": false,
+            "selections": [
+              (v0/*: any*/),
+              {
+                "alias": null,
+                "args": null,
+                "kind": "ScalarField",
+                "name": "firstname",
+                "storageKey": null
+              },
+              {
+                "alias": null,
+                "args": null,
+                "kind": "ScalarField",
+                "name": "secondname",
+                "storageKey": null
+              }
+            ],
+            "storageKey": null
+          },
+          (v0/*: any*/)
         ],
         "storageKey": null
       }
     ]
   },
   "params": {
-    "cacheID": "064d0235fbd9e971c9fd2ff4db9beeaa",
+    "cacheID": "5779ef6e42cddb013068ad19b2c3972e",
     "id": null,
     "metadata": {},
     "name": "ApprootQuery",
     "operationKind": "query",
-    "text": "query ApprootQuery {\n  books {\n    id\n    ...App_detail\n  }\n}\n\nfragment App_detail on Book {\n  title\n}\n"
+    "text": "query ApprootQuery {\n  books {\n    ...App_detail\n    id\n  }\n}\n\nfragment App_detail on Book {\n  title\n  author {\n    id\n    firstname\n    secondname\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "938e991c903a95d18e0391148e59f080";
+(node as any).hash = "867372aaae776ea7a106594d996912b5";
 
 export default node;

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Approot from "./Approot";
+import Approotfetchquery from "./Approotfetchquery"
 import reportWebVitals from "./reportWebVitals";
 import environment from "./RelayEnvironment";
 import { RelayEnvironmentProvider } from "react-relay";
@@ -19,15 +20,16 @@ const Approotme = () => {
   return <>
       <React.Suspense fallback={<>loadifonsaofnsadofinsd</>}>
       <button onClick={handle}> click to render another </button>
-      {open && <Approot />}
+      {open && <Approotfetchquery />}
       </React.Suspense>
   </>
 }
 root.render(
   <React.StrictMode>
     <RelayEnvironmentProvider environment={environment}>
-      <Approot />
+      {/* <Approot /> */}
       <Approotme />
+      {/* <Approotfetchquery /> */}
       {/* <Approot />
       <Approot />
       <Approot /> */}

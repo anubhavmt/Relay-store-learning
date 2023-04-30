@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<05d2502e2399f38f0c67ff2aa5bc3e51>>
+ * @generated SignedSource<<c83583cfd303a71184409fa6d1bb63b3>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -11,6 +11,11 @@
 import { Fragment, ReaderFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type App_detail$data = {
+  readonly author: {
+    readonly firstname: string;
+    readonly id: string;
+    readonly secondname: string;
+  };
   readonly title: string;
   readonly " $fragmentType": "App_detail";
 };
@@ -31,12 +36,44 @@ const node: ReaderFragment = {
       "kind": "ScalarField",
       "name": "title",
       "storageKey": null
+    },
+    {
+      "alias": null,
+      "args": null,
+      "concreteType": "Auth",
+      "kind": "LinkedField",
+      "name": "author",
+      "plural": false,
+      "selections": [
+        {
+          "alias": null,
+          "args": null,
+          "kind": "ScalarField",
+          "name": "id",
+          "storageKey": null
+        },
+        {
+          "alias": null,
+          "args": null,
+          "kind": "ScalarField",
+          "name": "firstname",
+          "storageKey": null
+        },
+        {
+          "alias": null,
+          "args": null,
+          "kind": "ScalarField",
+          "name": "secondname",
+          "storageKey": null
+        }
+      ],
+      "storageKey": null
     }
   ],
   "type": "Book",
   "abstractKey": null
 };
 
-(node as any).hash = "3a79ea341528cf45e1c0534d627acd94";
+(node as any).hash = "999b02c375b8a4fab46f5cf51b1496d6";
 
 export default node;

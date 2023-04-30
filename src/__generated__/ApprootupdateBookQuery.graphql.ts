@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<504a37a1bcacb0991928e6de18209b8d>>
+ * @generated SignedSource<<6cb437a7c6d2084aa886b8c4a44ceb10>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -26,7 +26,6 @@ export type ApprootupdateBookQuery$variables = {
 };
 export type ApprootupdateBookQuery$data = {
   readonly updateBook: {
-    readonly id: string;
     readonly " $fragmentSpreads": FragmentRefs<"App_detail">;
   } | null;
 };
@@ -83,7 +82,6 @@ return {
         "name": "updateBook",
         "plural": false,
         "selections": [
-          (v3/*: any*/),
           {
             "args": null,
             "kind": "FragmentSpread",
@@ -113,30 +111,56 @@ return {
         "name": "updateBook",
         "plural": false,
         "selections": [
-          (v3/*: any*/),
           {
             "alias": null,
             "args": null,
             "kind": "ScalarField",
             "name": "title",
             "storageKey": null
-          }
+          },
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "Auth",
+            "kind": "LinkedField",
+            "name": "author",
+            "plural": false,
+            "selections": [
+              (v3/*: any*/),
+              {
+                "alias": null,
+                "args": null,
+                "kind": "ScalarField",
+                "name": "firstname",
+                "storageKey": null
+              },
+              {
+                "alias": null,
+                "args": null,
+                "kind": "ScalarField",
+                "name": "secondname",
+                "storageKey": null
+              }
+            ],
+            "storageKey": null
+          },
+          (v3/*: any*/)
         ],
         "storageKey": null
       }
     ]
   },
   "params": {
-    "cacheID": "edff558fa8f6c23b4aec4a2cd111d401",
+    "cacheID": "383bc85ff95fdb67042c2323ec734dd0",
     "id": null,
     "metadata": {},
     "name": "ApprootupdateBookQuery",
     "operationKind": "mutation",
-    "text": "mutation ApprootupdateBookQuery(\n  $id: ID!\n  $book: bookInput!\n) {\n  updateBook(bookId: $id, book: $book) {\n    id\n    ...App_detail\n  }\n}\n\nfragment App_detail on Book {\n  title\n}\n"
+    "text": "mutation ApprootupdateBookQuery(\n  $id: ID!\n  $book: bookInput!\n) {\n  updateBook(bookId: $id, book: $book) {\n    ...App_detail\n    id\n  }\n}\n\nfragment App_detail on Book {\n  title\n  author {\n    id\n    firstname\n    secondname\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "aecc280cb9a2b888276e1b2838ab4522";
+(node as any).hash = "a434ac08907ae5df34adf95d93b1e470";
 
 export default node;
